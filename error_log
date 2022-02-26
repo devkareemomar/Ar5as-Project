@@ -1,0 +1,24 @@
+[23-Feb-2021 11:14:25 Africa/Cairo] PHP Fatal error:  Uncaught Symfony\Component\Routing\Exception\RouteNotFoundException: Route [home] not defined. in /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:420
+Stack trace:
+#0 /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(777): Illuminate\Routing\UrlGenerator->route('home', Array, true)
+#1 /home/beoniuki/ar5as.net/storage/framework/views/7ef1fa4a65b356248265eaf000976f9b4eb07b71.php(40): route('home')
+#2 /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(43): include('/home/beoniuki/...')
+#3 /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/beoniuki/...', Array)
+#4 /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/View/View.php(143): Illuminate\View\Engines\CompilerEngine->get('/home/beoniuki/...', Array)
+#5 /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/View/ in /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php on line 420
+[23-Feb-2021 11:14:26 Africa/Cairo] PHP Fatal error:  Uncaught Symfony\Component\Routing\Exception\RouteNotFoundException: Route [home] not defined. in /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:420
+Stack trace:
+#0 /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(777): Illuminate\Routing\UrlGenerator->route('home', Array, true)
+#1 /home/beoniuki/ar5as.net/storage/framework/views/7ef1fa4a65b356248265eaf000976f9b4eb07b71.php(40): route('home')
+#2 /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(43): include('/home/beoniuki/...')
+#3 /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/beoniuki/...', Array)
+#4 /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/View/View.php(143): Illuminate\View\Engines\CompilerEngine->get('/home/beoniuki/...', Array)
+#5 /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/View/ in /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php on line 420
+[23-Feb-2021 11:14:31 Africa/Cairo] PHP Fatal error:  Uncaught Symfony\Component\Routing\Exception\RouteNotFoundException: Route [home] not defined. in /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:420
+Stack trace:
+#0 /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(777): Illuminate\Routing\UrlGenerator->route('home', Array, true)
+#1 /home/beoniuki/ar5as.net/storage/framework/views/7ef1fa4a65b356248265eaf000976f9b4eb07b71.php(40): route('home')
+#2 /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(43): include('/home/beoniuki/...')
+#3 /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/beoniuki/...', Array)
+#4 /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/View/View.php(143): Illuminate\View\Engines\CompilerEngine->get('/home/beoniuki/...', Array)
+#5 /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/View/ in /home/beoniuki/ar5as.net/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php on line 420

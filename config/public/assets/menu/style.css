@@ -1,0 +1,199 @@
+.menu>ul {
+    background-color: #2b378d;
+    text-align: center;
+    position: relative;
+    font-size: 0;
+    /* For removing the default margin between the inline-block elements if any. */
+}
+
+.menu>ul>li {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+ul li a {
+    /* color: #fff; */
+    font-size: 16px;
+    display: block;
+}
+
+ul li:hover a {
+    color: #0387d1
+}
+
+.bg-move {
+    background-color: #2b378d;
+}
+
+
+/* .has-sub-menu > a {
+position: relative;
+} */
+
+.has-sub-menu>a::after {
+    content: '';
+    border: 5px solid transparent;
+    border-top-color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.has-sub-menu:hover>a::after {
+    border-top-color: #333;
+}
+
+.sub-menu-wrapper {
+    position: absolute;
+    top: 65px;
+    left: -9999px;
+    background: #fff;
+    display: flex;
+    opacity: 0;
+    transition: top .5s, opacity .5s;
+    -webkit-transition: top .5s, opacity .5s;
+    -moz-transition: top .5s, opacity .5s;
+    -ms-transition: top .5s, opacity .5s;
+    -o-transition: top .5s, opacity .5s;
+}
+
+.sub-menu {
+    padding: 20px 30px;
+    width: 25%;
+    text-align: left;
+}
+
+
+/*
+.sub-menu-heading {
+    border-bottom: 1px solid #2b378d;
+    margin-bottom: 10px;
+    cursor: initial;
+    text-align: center;
+}
+*/
+
+.sub-menu-item {
+    text-align: right;
+    margin-bottom: -20px !important;
+}
+
+.sub-menu a:hover {
+    color: #0416a1;
+}
+
+.sub-menu-heading a:hover {
+    color: initial;
+}
+
+.sub-menu-wrapper a {
+    color: #030e5f;
+}
+
+.has-sub-menu:hover>.sub-menu-wrapper {
+    opacity: 1;
+    left: 0;
+    right: 0;
+    top: 45px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-mobile-hiddin {
+        display: none;
+    }
+}
+
+
+/* Hamburger Styling 
+
+.mobile-menu {
+    display: flex;
+    width: 30px;
+    height: 25px;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: none;
+}
+
+.bar {
+    height: 3px;
+    background: #2b378d;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+.mobile-menu.active .bar:nth-child(1) {
+    transform: translateY(6px) rotate(-45deg);
+    -webkit-transform: translateY(6px) rotate(-45deg);
+    -moz-transform: translateY(6px) rotate(-45deg);
+    -ms-transform: translateY(6px) rotate(-45deg);
+    -o-transform: translateY(6px) rotate(-45deg);
+}
+
+.mobile-menu.active .bar:nth-child(2) {
+    transform: translateY(-6px) rotate(45deg);
+    -webkit-transform: translateY(-6px) rotate(45deg);
+    -moz-transform: translateY(-6px) rotate(45deg);
+    -ms-transform: translateY(-6px) rotate(45deg);
+    -o-transform: translateY(-6px) rotate(45deg);
+}
+
+
+/* Media Queries 
+
+@media screen and (max-width: 768px) {
+    .mobile-menu {
+        display: flex;
+    }
+    .menu {
+        padding-top: 60px;
+        display: none;
+    }
+    .menu>ul>li {
+        display: block;
+        text-align: left;
+        position: relative;
+    }
+    .sub-menu a:hover {
+        color: #333;
+    }
+    .has-sub-menu>a {
+        /* position: static; 
+        display: inline-block;
+    }
+    .has-sub-menu>a::after {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    .sub-menu-wrapper {
+        position: static;
+        background: transparent;
+        flex-direction: column;
+        opacity: 1;
+        display: none;
+    }
+    .has-sub-menu:hover>.sub-menu-wrapper {
+        opacity: initial;
+    }
+    .sub-menu {
+        width: 100%;
+        padding: 10px 5px;
+    }
+    .sub-menu-heading {
+        border-color: #fff;
+    }
+    .sub-menu-wrapper a {
+        color: #fff;
+    }
+    
+}
+*/
