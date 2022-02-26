@@ -133,6 +133,11 @@ Route::get('/stripe/success', 'StripePaymentController@success')->name('stripe.s
 Route::get('/stripe/cancel', 'StripePaymentController@cancel')->name('stripe.cancel');
 //Stripe END
 
+//Bank Misr Start
+Route::get('/visaMaster/success/{orderId}', 'Payment\VisaMasterController@success')->name('visaMaster.success');
+Route::get('/visaMaster/cancel', 'Payment\VisaMasterController@cancel')->name('visaMaster.cancel');
+//Bank Misr end
+
 Route::get('/compare', 'CompareController@index')->name('compare');
 Route::get('/compare/reset', 'CompareController@reset')->name('compare.reset');
 Route::post('/compare/addToCompare', 'CompareController@addToCompare')->name('compare.addToCompare');

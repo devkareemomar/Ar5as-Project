@@ -9,6 +9,7 @@ use App\Category;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\InstamojoController;
 use App\Http\Controllers\ClubPointController;
+use App\Http\Controllers\Payment\VisaMasterController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\PublicSslCommerzPaymentController;
 use App\Http\Controllers\OrderController;
@@ -34,6 +35,7 @@ class CheckoutController extends Controller
     //check the selected payment gateway and redirect to that controller accordingly
     public function checkout(Request $request)
     {
+
         if ($request->payment_option != null) {
 
             $orderController = new OrderController;
@@ -95,12 +97,18 @@ class CheckoutController extends Controller
                 } else if ($request->payment_option == 'bkash') {
                     $bkash = new BkashController;
                     return $bkash->pay();
-                }else if ($request->payment_option == 'flutterwave') {
+                } else if ($request->payment_option == 'flutterwave') {
                     $flutterwave = new FlutterwaveController();
                     return $flutterwave->pay();
                 } else if ($request->payment_option == 'mpesa') {
                     $mpesa = new MpesaController();
                     return $mpesa->pay();
+                } elseif ($request->payment_option == 'visa_master') {
+
+                    $order = Order::findOrFail($request->session()->get('order_id'));
+
+                    $visaMaster = new VisaMasterController;
+                    return $visaMaster->createCheckout($order);
                 } elseif ($request->payment_option == 'paytm') {
                     $paytm = new PaytmController;
                     return $paytm->index();
@@ -114,7 +122,7 @@ class CheckoutController extends Controller
                     $request->session()->forget('coupon_discount');
                     flash(translate("Your order has been placed successfully"))->success();
                     return redirect()->route('order_confirmed');
-                     //dd('welcome');
+                    //dd('welcome');
                 } elseif ($request->payment_option == 'wallet') {
                     $user = Auth::user();
                     $order = Order::findOrFail($request->session()->get('order_id'));
@@ -230,9 +238,9 @@ class CheckoutController extends Controller
 
     public function store_shipping_info(Request $request)
     {
-          //dd('welocme');
+        //dd('welocme');
 
-      //  dd(session()->all());
+        //  dd(session()->all());
         if (Auth::check()) {
             if ($request->address_id == null) {
                 flash(translate("Please add shipping address"))->warning();
@@ -306,14 +314,13 @@ class CheckoutController extends Controller
                 if (\App\Product::find($object['id'])->user_id == $request->owner_id) {
                     if ($object['shipping_type'] == 'home_delivery') {
                         $object['shipping'] = getShippingCost($key);
-                    }
-                    else {
+                    } else {
                         $object['shipping'] = 0;
                         //$object['shipping'] = getShippingCost($key);
                     }
                 } else {
                     $object['shipping'] = 0;
-                   // $object['shipping'] = getShippingCost($key);
+                    // $object['shipping'] = getShippingCost($key);
                 }
                 return $object;
             });
@@ -347,11 +354,11 @@ class CheckoutController extends Controller
         $subtotal = 0;
         $tax = 0;
         $shipping = 0;
-       // dd( Session::get('cart'));
+        // dd( Session::get('cart'));
         foreach (Session::get('cart') as $key => $cartItem) {
             $subtotal += $cartItem['price'] * $cartItem['quantity'];
             $tax += $cartItem['tax'] * $cartItem['quantity'];
-          //  $shipping += $cartItem['shipping'] * $cartItem['quantity'];
+            //  $shipping += $cartItem['shipping'] * $cartItem['quantity'];
             $shipping += $cartItem['shipping'];
         }
 
