@@ -10,6 +10,7 @@ use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\InstamojoController;
 use App\Http\Controllers\ClubPointController;
 use App\Http\Controllers\Payment\VisaMasterController;
+use App\Http\Controllers\Payment\MeezaCardController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\PublicSslCommerzPaymentController;
 use App\Http\Controllers\OrderController;
@@ -104,11 +105,13 @@ class CheckoutController extends Controller
                     $mpesa = new MpesaController();
                     return $mpesa->pay();
                 } elseif ($request->payment_option == 'visa_master') {
-
                     $order = Order::findOrFail($request->session()->get('order_id'));
-
                     $visaMaster = new VisaMasterController;
                     return $visaMaster->createCheckout($order);
+                } elseif ($request->payment_option == 'meeza_card') {
+                    $order = Order::findOrFail($request->session()->get('order_id'));
+                    $meezaCard = new MeezaCardController;
+                    return $meezaCard->createCheckout($order);
                 } elseif ($request->payment_option == 'paytm') {
                     $paytm = new PaytmController;
                     return $paytm->index();

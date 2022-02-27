@@ -138,6 +138,12 @@ Route::get('/visaMaster/success/{orderId}', 'Payment\VisaMasterController@succes
 Route::get('/visaMaster/cancel', 'Payment\VisaMasterController@cancel')->name('visaMaster.cancel');
 //Bank Misr end
 
+//Meeza card Start
+Route::get('/meezacard/success/{orderId}', 'Payment\VisaMasterController@success')->name('meezaCard.success');
+Route::get('/meezacard/cancel', 'Payment\VisaMasterController@cancel')->name('meezaCard.cancel');
+//Meeza card end
+
+
 Route::get('/compare', 'CompareController@index')->name('compare');
 Route::get('/compare/reset', 'CompareController@reset')->name('compare.reset');
 Route::post('/compare/addToCompare', 'CompareController@addToCompare')->name('compare.addToCompare');

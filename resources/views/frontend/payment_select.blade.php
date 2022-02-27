@@ -305,7 +305,7 @@
                                                 <div class="col-6 col-md-4">
                                                     <label class="aiz-megabox d-block mb-3">
                                                         <input value="visa_master" class="online_payment" type="radio"
-                                                               name="payment_option">
+                                                               name="payment_option" checked>
                                                         <span class="d-block p-3 aiz-megabox-elem">
                                                         <img
                                                             src="{{ static_asset('assets/img/cards/visa-mastercard.png')}}"
@@ -313,6 +313,24 @@
                                                         <span class="d-block text-center">
                                                             <span
                                                                 class="d-block fw-600 fs-15">{{ translate('visa_mastercard')}}</span>
+                                                        </span>
+                                                    </span>
+                                                    </label>
+                                                    <div id="meezaCardDiv"></div>
+                                                </div>
+                                            @endif
+                                            @if(\App\BusinessSetting::where('type', 'meeza_card')->first()->value == 1)
+                                                <div class="col-6 col-md-4">
+                                                    <label class="aiz-megabox d-block mb-3">
+                                                        <input value="meeza_card" class="online_payment" type="radio"
+                                                               name="payment_option">
+                                                        <span class="d-block p-3 aiz-megabox-elem">
+                                                        <img
+                                                            src="{{ static_asset('assets/img/cards/meeza_card.png')}}"
+                                                            class="img-fluid mb-2">
+                                                        <span class="d-block text-center">
+                                                            <span
+                                                                class="d-block fw-600 fs-15">{{ translate('meeza_card')}}</span>
                                                         </span>
                                                     </span>
                                                     </label>
@@ -349,7 +367,7 @@
                                                     <div class="col-6 col-md-4">
                                                         <label class="aiz-megabox d-block mb-3">
                                                             <input value="cash_on_delivery" class="online_payment"
-                                                                   type="radio" name="payment_option" checked>
+                                                                   type="radio" name="payment_option">
                                                             <span class="d-block p-3 aiz-megabox-elem">
                                                             <img src="{{ static_asset('assets/img/cards/cod.png')}}"
                                                                  class="img-fluid mb-2">
