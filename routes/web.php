@@ -139,8 +139,8 @@ Route::get('/visaMaster/cancel', 'Payment\VisaMasterController@cancel')->name('v
 //Bank Misr end
 
 //Meeza card Start
-Route::get('/meezacard/success/{orderId}', 'Payment\VisaMasterController@success')->name('meezaCard.success');
-Route::get('/meezacard/cancel', 'Payment\VisaMasterController@cancel')->name('meezaCard.cancel');
+Route::get('/meezacard/success/{orderId}', 'Payment\MeezaCardController@success')->name('meezaCard.success');
+Route::get('/meezacard/cancel', 'Payment\MeezaCardController@cancel')->name('meezaCard.cancel');
 //Meeza card end
 
 

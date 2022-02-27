@@ -28,8 +28,7 @@
                 window.location.href = cancelUrl;
             },
             cancelCallback: function () {
-                var cancelUrl = "{{ $cancelUrl }}";
-                window.location.href = cancelUrl;
+
             }
         };
 

@@ -16,9 +16,13 @@ class MeezaCardController extends Controller
 
         $date = date('Ymdhis');
 
+        $total = number_format(floatval($order->grand_total), 2, '.', '');
+
+        $total = floatval($total * 100);
+
         $viewConfig = [
             'orderId' => $referenceKey,
-            'amount' => $order->grand_total,
+            'amount' => $total,
             'meezaCardUrl' => env("MEEZA_CARD_URL"),
             'merchantId' => env("MEEZA_Merchant_ID"),
             'terminalId' => env("MEEZA_Terminal_ID"),
