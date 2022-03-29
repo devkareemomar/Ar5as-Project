@@ -20,7 +20,7 @@
     script.setAttribute("id", "bankMisrSdk");
     script.setAttribute("data-complete", "{{ route('visaMaster.success',['orderId'=> $orderId]) }}");
     script.setAttribute("data-error", "{{ route('visaMaster.cancel') }}");
-    script.setAttribute("src", "https://banquemisr.gateway.mastercard.com/checkout/version/61/checkout.js");
+    script.setAttribute("src", "https://banquemisr.gateway.mastercard.com/checkout/version/60/checkout.js");
     document.getElementById('visaMasterDiv').appendChild(script);
 
     script.onload = () => {

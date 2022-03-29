@@ -337,6 +337,24 @@
                                                     <div id="visaMasterDiv"></div>
                                                 </div>
                                             @endif
+                                            @if(\App\BusinessSetting::where('type', 'meeza_card')->first()->value == 1)
+                                                    <div class="col-6 col-md-4">
+                                                        <label class="aiz-megabox d-block mb-3">
+                                                            <input value="mobile_wallet" class="online_payment" type="radio"
+                                                                   name="payment_option">
+                                                            <span class="d-block p-3 aiz-megabox-elem">
+                                                        <img
+                                                            src="{{ static_asset('assets/img/cards/mobile_wallet.png')}}"
+                                                            class="img-fluid mb-2">
+                                                        <span class="d-block text-center">
+                                                            <span
+                                                                class="d-block fw-600 fs-15">{{ translate('meeza_card')}}</span>
+                                                        </span>
+                                                    </span>
+                                                        </label>
+                                                        <div id="visaMasterDiv"></div>
+                                                    </div>
+                                                @endif
 
                                             @if(\App\Addon::where('unique_identifier', 'paytm')->first() != null && \App\Addon::where('unique_identifier', 'paytm')->first()->activated)
                                                 <div class="col-6 col-md-4">

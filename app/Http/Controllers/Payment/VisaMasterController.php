@@ -18,6 +18,13 @@ class VisaMasterController extends Controller
         $reqParamArray['apiOperation'] = "CREATE_CHECKOUT_SESSION";
         $reqParamArray['interaction'] = [
             'operation' => 'PURCHASE',
+            'theme' => 'default',
+            'displayControl' => [
+                'billingAddress' => 'HIDE',
+                'customerEmail' => 'HIDE',
+                'orderSummary' => 'SHOW',
+                'shipping' => 'HIDE',
+            ],
         ];
         $reqParamArray['order'] = [
             'id' => $referenceKey,
