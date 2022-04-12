@@ -11,6 +11,7 @@ use App\Http\Controllers\InstamojoController;
 use App\Http\Controllers\ClubPointController;
 use App\Http\Controllers\Payment\VisaMasterController;
 use App\Http\Controllers\Payment\MeezaCardController;
+use App\Http\Controllers\Payment\MobileWalletController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\PublicSslCommerzPaymentController;
 use App\Http\Controllers\OrderController;
@@ -112,6 +113,10 @@ class CheckoutController extends Controller
                     $order = Order::findOrFail($request->session()->get('order_id'));
                     $meezaCard = new MeezaCardController;
                     return $meezaCard->createCheckout($order);
+                } elseif ($request->payment_option == 'mobile_wallet') {
+                    $order = Order::findOrFail($request->session()->get('order_id'));
+                    $mobileWallet = new MobileWalletController;
+                    return $mobileWallet->createCheckout($order);
                 } elseif ($request->payment_option == 'paytm') {
                     $paytm = new PaytmController;
                     return $paytm->index();

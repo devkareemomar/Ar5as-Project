@@ -142,6 +142,9 @@ Route::get('/visaMaster/cancel', 'Payment\VisaMasterController@cancel')->name('v
 Route::get('/meezacard/success/{orderId}', 'Payment\MeezaCardController@success')->name('meezaCard.success');
 Route::get('/meezacard/cancel', 'Payment\MeezaCardController@cancel')->name('meezaCard.cancel');
 //Meeza card end
+//Mobile Wallet start
+Route::post("/mobileWallet/requestToPay","Payment\MobileWalletController@requestToPayAction")->name("mobileWallet.requestToPay");
+//Mobile Wallet end
 
 
 Route::get('/compare', 'CompareController@index')->name('compare');
